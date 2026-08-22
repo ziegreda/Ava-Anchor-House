@@ -1,127 +1,115 @@
-# Bahay Amihan Apartments — Website
+# AVA ANCHOR HOUSE Apartments — Website
 
-Simpleng 3-file na website (HTML + CSS + JS, walang build tools/framework
-kailangan) para i-advertise ang apartment unit para sa upa o bookingan.
+A lightweight static website (HTML + CSS + JavaScript, with no build tools or
+framework required) for advertising AVA ANCHOR HOUSE shared-room rentals in
+Koronadal City, South Cotabato. The website content is currently written in
+English.
 
-## 📁 Mga File
+## Project Files
 
 ```
-apartment-site/
-├── index.html   → nilalaman ng buong page (text, larawan, mga section)
-├── style.css    → hitsura/disenyo (kulay, font, spacing, layout)
-├── script.js    → mga gumagalaw na parte (mobile menu, gallery, contact form)
-└── README.md    → ito
+Apartment/
+├── index.html   # Page content, sections, image references, and form markup
+├── style.css    # Layout, colors, typography, responsive behavior
+├── script.js    # Mobile menu, scroll header, lightbox, and form handling
+├── photos/      # Local gallery and hero images
+└── README.md    # Project documentation
 ```
 
-Kailangan silang **magkasama sa iisang folder** dahil magkakaugnay sila
-(tinatawag ni `index.html` ang `style.css` at `script.js` gamit ang
-relative path).
+Keep the files and the `photos/` folder together. The HTML uses relative paths
+for the stylesheet, JavaScript file, and local images.
 
-## ✏️ Ano ang dapat palitan
+## Current Website Content
 
-Buksan ang `index.html` sa isang text/code editor (VS Code, Notepad++, etc.)
-Hanapin ang mga komentong may `✏️ PALITAN` — doon nakatakda ang mga
-sumusunod na kailangang i-edit:
+The current page includes:
 
-| Bagay | Nasaan sa index.html |
+| Content | Location |
 |---|---|
-| Pangalan ng apartment | `.logo-text`, `<h1 class="hero-title">`, footer |
-| Lungsod/probinsya, tagline | Hero section (`#top`) |
-| Presyo | Hero keytag + `#presyo` section |
-| Deskripsyon ng unit, bilang ng kwarto/CR/sqm | `#tungkol` section |
-| Amenities | `#amenities` — pwede magdagdag/magbawas ng `<li class="amenity">` |
-| Mga larawan | `#gallery` — palitan ang `src="https://placehold.co/..."` ng sarili mong larawan (hal. `src="images/sala.jpg"`) |
-| Address at landmarks | `#lokasyon` |
-| Numero, email, Messenger link | `#kontak` → `.contact-methods` |
+| Property name and hero content | `.logo-text`, `.hero-title`, `.hero-tagline`, and `#top` |
+| Room description and facts | `#tungkol` |
+| Amenities | `#amenities`, using `.amenity` list items |
+| Gallery images and captions | `#gallery` |
+| Address and nearby landmarks | `#lokasyon` |
+| Rental prices and inclusions | `#presyo` |
+| Phone, WhatsApp, Messenger, and email | `#kontak` and `.contact-methods` |
 
-**Tip:** Gumamit ng "Find & Replace" (Ctrl+H / Cmd+H) sa editor mo para
-mabilis mapalitan ang paulit-ulit na text tulad ng "Bahay Amihan".
+The current rental information is a shared room for up to 4 people, with an
+18 sqm ground-floor room, private bathroom, common kitchen, study area, CCTV,
+Vendo WiFi, and parking. The listed rate is PHP 1,500 per month or PHP 1,500
+per night for short-term stays.
 
-### Paglalagay ng sariling mga larawan
+### Local Images
 
-1. Gumawa ng bagong folder na `images` sa loob ng `apartment-site`.
-2. Ilagay doon ang mga JPG/PNG ng unit mo (i-rename halimbawa:
-   `hero.jpg`, `sala.jpg`, `kusina.jpg`, `kwarto.jpg`, `banyo.jpg`,
-   `balkonahe.jpg`).
-3. Sa `index.html`, palitan ang `src="https://placehold.co/..."` ng
-   halimbawa `src="images/sala.jpg"`.
-4. Panatilihing hindi masyadong malaki ang file size ng larawan
-   (ideal: under 500KB bawat larawan) para mabilis mag-load ang site —
-   pwede gumamit ng [squoosh.app](https://squoosh.app) para i-compress
-   nang libre.
+The current HTML references these local files:
 
-## 📧 Pag-activate ng Contact Form (opsyonal pero rekomendado)
+- `photos/BG-darkened.jpg` - hero background
+- `photos/CommonArea.png` - common area gallery image
+- `photos/Kusina.png` - kitchen gallery image
 
-Ang form sa `#kontak` ay gumagamit ng [Formspree](https://formspree.io),
-isang libreng serbisyo na nagpapadala ng email galing sa static na website
-(hindi ito kailangang may sariling server/backend):
+The bedroom, bathroom, and balcony gallery items still use placeholder image
+URLs. Replace those `src` values in `index.html` when the final photos are
+available. Keep image filenames and letter casing consistent, especially when
+deploying to a case-sensitive host.
 
-1. Pumunta sa [formspree.io](https://formspree.io) at mag-sign up (libre).
-2. Gumawa ng bagong form, ilagay ang email na tatanggap ng inquiries.
-3. Kokopyahin ka nito ng Form ID/endpoint na parang:
-   `https://formspree.io/f/abcd1234`
-4. Sa `index.html`, hanapin ang linyang:
-   `action="https://formspree.io/f/PALITAN_NG_FORM_ID"`
-   at palitan ang `PALITAN_NG_FORM_ID` ng sarili mong ID.
+## Contact Form Setup
 
-Kung ayaw mo munang mag-set up ng Formspree, gumagana pa rin ang site —
-may mga button naman na diretso sa Call, WhatsApp, Messenger, at Email.
+The form in `#kontak` uses [Formspree](https://formspree.io), which can send
+inquiry messages from this static website without a custom backend:
 
-## 🧪 Pag-test bago mag-deploy
+1. Create an account at [formspree.io](https://formspree.io).
+2. Create a form and set the email address that should receive inquiries.
+3. Copy the endpoint, for example `https://formspree.io/f/abcd1234`.
+4. Replace `PALITAN_NG_FORM_ID` in the `action` attribute of the form in
+   `index.html`.
 
-Bago mo i-upload, tingnan mo muna sa sarili mong computer:
+Until the placeholder endpoint is replaced, `script.js` shows a setup reminder
+instead of submitting the form. The Call, WhatsApp, Messenger, and Email links
+remain available independently.
 
-1. I-double click ang `index.html` — bubukas ito sa browser mo.
-2. I-resize ang window (o gamitin ang DevTools > Toggle Device Toolbar)
-   para makita kung maganda pa rin tingnan sa mobile size.
-3. I-click ang mga larawan sa gallery para tingnan ang lightbox.
-4. I-test ang hamburger menu sa maliit na screen size.
+## Test Before Deployment
 
-## 🚀 Pag-deploy (LIBRE)
+Open `index.html` in a browser and verify the following:
 
-### Option A — Netlify (pinaka-madali, drag-and-drop lang)
+1. The hero image at local gallery images load correctly.
+2. The layout remains readable at desktop and mobile widths.
+3. Gallery images open in the lightbox and close with the close button or
+   Escape key.
+4. The mobile menu opens and closes correctly.
+5. The contact form shows the expected setup, success, or error status.
 
-1. Pumunta sa [netlify.com](https://www.netlify.com) at mag-sign up
-   (pwede gamit Google/GitHub/Email — libre).
-2. Sa dashboard, hanapin ang **"Add new site" → "Deploy manually"**.
-3. I-drag-and-drop ang buong `apartment-site` folder papunta sa browser
-   window.
-4. Automatic itong bibigyan ng live link tulad ng
-   `random-name-123.netlify.app`.
-5. Para palitan ang pangalan: **Site settings → Change site name**.
-6. Tapos na! Live na ang site mo at pwede nang i-share ang link.
+## Deployment
 
-Bawat may bagong pagbabago (hal. bagong larawan/presyo): i-drag-and-drop
-lang ulit ang buong folder sa parehong dashboard para mag-update.
+### Option A - Netlify
 
-### Option B — GitHub Pages (kung may GitHub account ka na)
+1. Sign up at [netlify.com](https://www.netlify.com).
+2. Choose **Add new site -> Deploy manually**.
+3. Drag and drop the entire `Apartment` folder, including `photos/`.
+4. Netlify will provide a shareable `netlify.app` URL.
 
-1. Gumawa ng bagong repository sa [github.com](https://github.com)
-   (hal. pangalanan mo itong `apartment-site`).
-2. I-upload ang 3 files (`index.html`, `style.css`, `script.js`) gamit
-   ang "Add file → Upload files" sa web interface ng GitHub.
-3. Pumunta sa **Settings → Pages** ng repository.
-4. Sa ilalim ng "Branch", piliin ang `main` at i-save.
-5. Maghintay ng 1–2 minuto — lalabas ang live link sa parehong page,
-   parang `https://username.github.io/apartment-site/`.
+Upload the updated folder again whenever you change the content or images.
 
-### Pagdaragdag ng sariling domain (hal. bahayamihan.com)
+### Option B - GitHub Pages
 
-Kapag may binili kang domain sa hinaharap (Namecheap, GoDaddy, atbp.),
-pwede itong ikonekta sa alinman sa Netlify o GitHub Pages nang libre —
-sa Netlify: **Domain settings → Add custom domain**; sa GitHub Pages:
-**Settings → Pages → Custom domain**. Susundan mo na lang ang
-mga instructions na lalabas doon para i-set up ang DNS.
+1. Create a repository at [github.com](https://github.com).
+2. Upload `index.html`, `style.css`, `script.js`, and the complete `photos/`
+   folder.
+3. Open **Settings -> Pages**.
+4. Select the `main` branch and save.
+5. GitHub Pages will provide a URL such as
+   `https://username.github.io/apartment-site/`.
 
-## ❓ Karaniwang Tanong
+### Custom Domain
 
-**Bakit hindi lumalabas ang larawan ko?**
-Siguraduhing tama ang filename/spelling sa `src="images/xxx.jpg"` at
-nasa loob talaga ng `images` folder ang larawan — case-sensitive ito
-minsan sa ibang hosting.
+You can connect a purchased domain through Netlify's **Domain settings -> Add
+custom domain** or GitHub Pages' **Settings -> Pages -> Custom domain**.
 
-**Pwede bang gawing Airbnb-style booking calendar ito?**
-Ang site na ito ay para sa pag-advertise at pag-inquire — hindi pa
-kasama dito ang real-time na booking calendar/payment (kailangan nito
-ng backend/database). Kung kailangan mo na ito sa hinaharap, sabihan mo
-lang ako para gabayan kita sa susunod na hakbang.
+## Frequently Asked Questions
+
+**Why is an image not loading?**
+Check the filename, extension, capitalization, and relative path in the
+corresponding `src` attribute. The image must be inside the `photos/` folder.
+
+**Does this include an Airbnb-style booking calendar?**
+No. This is currently an advertising and inquiry website. Real-time booking,
+availability, and payments would require a backend or a third-party booking
+service.
