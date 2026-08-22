@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVA ANCHOR HOUSE Apartments — Available for Rent</title>
+<meta name="description" content="Fully furnished shared room for rent near malls, markets, schools, and transportation terminals in Koronadal City. Inquire for availability and rates.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%91%3C/text%3E%3C/svg%3E">
+
+<!-- Google Fonts: Fraunces (display), Inter (body), IBM Plex Mono (specs/prices) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- =========================================================
+     NAVIGATION
+     ✏️ PALITAN: pangalan ng apartment sa .logo-text
+========================================================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-key" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="8" cy="8" r="4.25"/>
+          <path d="M11 11l9 9M16.2 15.8l2.4-2.4M18.7 18.3l2.1-2.1"/>
+        </svg>
+      </span>
+      <span class="logo-text">AVA ANCHOR HOUSE</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#tungkol">About</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#lokasyon">Location</a>
+      <a href="#presyo">Pricing</a>
+      <a href="#kontak">Contact</a>
+    </nav>
+
+    <a href="#kontak" class="btn btn-primary btn-small nav-cta">Inquire</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- =========================================================
+       HERO
+       ✏️ PALITAN: pangalan ng unit, lungsod, tagline, at ang
+       larawan sa .hero-photo img (kunin ang tunay na larawan
+       ng unit at ilagay bilang images/hero.jpg)
+  ========================================================= -->
+  <section class="hero" id="top">
+    <div class="hero-photo">
+      <img src="photos/BG-darkened.jpg"
+           alt="Exterior view of AVA ANCHOR HOUSE Apartments" loading="eager">
+      <div class="hero-scrim" aria-hidden="true"></div>
+    </div>
+
+    <div class="container hero-inner">
+      <p class="eyebrow">FOR RENT — KORONADAL, SOUTH COTABATO</p>
+      <h1 class="hero-title">AVA ANCHOR HOUSE<br><em>Apartments</em></h1>
+      <p class="hero-tagline">Rest. Study. Sail.</p>
+
+      <div class="hero-actions">
+        <a href="#kontak" class="btn btn-primary">Inquire Now</a>
+        <a href="#gallery" class="btn btn-outline">View Gallery</a>
+      </div>
+    </div>
+
+    <!-- Signature "keytag" element — presyo na nakasabit parang susi -->
+    <div class="keytag-wrap hero-keytag" aria-hidden="false">
+      <svg class="keytag-string" viewBox="0 0 40 60" aria-hidden="true">
+        <circle cx="20" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M20 11 Q 12 30 20 46" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+      </svg>
+      <div class="keytag">
+        <span class="keytag-label">STARTING AT</span>
+        <span class="keytag-price">₱1,500<span class="keytag-unit">/month</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       TUNGKOL / ABOUT
+       ✏️ PALITAN: paglalarawan ng unit + quick facts (kwarto,
+       CR, sqm, capacity, parking)
+  ========================================================= -->
+  <section class="section" id="tungkol">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT THE UNIT</p>
+        <h3 class="section-title">A Safe, Comfortable, and Budget-Friendly Home</h3>
+
+        <p>Looking for a quiet and well-maintained place to stay? Our shared room is ideal for students and working professionals who want to save without compromising comfort and security.</p>
+
+        <div class="about-group">
+          <h3>Room Features and Inclusions</h3>
+          <ul class="details-list">
+            <li><strong>Capacity</strong><span>Accommodates up to 4 people with 2 double-deck beds.</span></li>
+            <li><strong>Private Bathroom</strong><span>In-room bathroom for added privacy and convenience.</span></li>
+            <li><strong>Electricity</strong><span>Individual check meter for transparent and accurate billing.</span></li>
+            <li><strong>Water</strong><span>Fixed and affordable at ₱150 per person per month.</span></li>
+          </ul>
+        </div>
+
+        <div class="about-group">
+          <h3>Shared Amenities and Security</h3>
+          <ul class="details-list">
+            <li><strong>24/7 CCTV</strong><span>Additional security and peace of mind for every resident.</span></li>
+            <li><strong>Common Kitchen</strong><span>A shared kitchen is available for everyday cooking.</span></li>
+            <li><strong>Common Study Area</strong><span>A quiet space for studying or working.</span></li>
+            <li><strong>Vendo WiFi</strong><span>Fast and affordable internet access whenever you need it.</span></li>
+            <li><strong>Garage</strong><span>Designated space is available for cars or motorcycles.</span></li>
+          </ul>
+        </div>
+
+        <p class="about-cta"><em>Inquire today to book or schedule an on-site viewing.</em></p>
+      </div>
+
+      <dl class="quick-facts">
+        <div class="fact">
+          <dt>Room</dt>
+          <dd>1</dd>
+        </div>
+        <div class="fact">
+          <dt>CR</dt>
+          <dd>1</dd>
+        </div>
+        <div class="fact">
+          <dt>Size</dt>
+          <dd>18 sqm</dd>
+        </div>
+        <div class="fact">
+          <dt>Suitable For</dt>
+          <dd>4 pax</dd>
+        </div>
+        <div class="fact">
+          <dt>Floor</dt>
+          <dd>Ground Floor</dd>
+        </div>
+        <div class="fact">
+          <dt>Parking</dt>
+          <dd>Available</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       AMENITIES
+       ✏️ PALITAN/DAGDAGAN: alisin o dagdagan ang mga <li> base
+       sa aktwal na amenities ng unit
+  ========================================================= -->
+  <section class="section section-alt" id="amenities">
+    <div class="container">
+      <p class="eyebrow">WHAT'S INCLUDED</p>
+      <h2 class="section-title">Amenities &amp; Features</h2>
+
+      <ul class="amenities-grid">
+        <li class="amenity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8.5a15 15 0 0 1 18 0M6.5 12a10 10 0 0 1 11 0M10 15.5a5 5 0 0 1 4 0"/><circle cx="12" cy="19" r="1.1" fill="currentColor" stroke="none"/></svg>
+          <span>Vendo WiFi</span>
+        </li>
+        <li class="amenity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11"/></svg>
+          <span>Aircon (Optional)</span>
+        </li>
+        <li class="amenity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg>
+          <span>Common Kitchen and Sink</span>
+        </li>
+        <li class="amenity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
+          <span>24/7 CCTV</span>
+        </li>
+        <li class="amenity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 19v2M16 19v2"/><text x="12" y="15" font-size="9" text-anchor="middle" fill="currentColor" stroke="none" font-family="inherit">P</text></svg>
+          <span>Parking Space</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       GALLERY
+       ✏️ PALITAN: palitan ang src ng bawat img gamit ang
+       tunay na larawan (hal. images/sala.jpg)
+  ========================================================= -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <p class="eyebrow">TAKE A LOOK AROUND</p>
+      <h2 class="section-title">Unit Gallery</h2>
+
+      <div class="gallery-grid">
+        <button class="gallery-item span-2" data-caption="Common Area">
+          <img src="photos/CommonArea.png" alt="Common area of the unit" loading="lazy">
+        </button>
+        <button class="gallery-item" data-caption="kitchen-sink">
+          <img src="photos/kitchen-sink.png" alt="kitchen-sink" loading="lazy">
+        </button>
+        <button class="gallery-item" data-caption="room1-2">
+          <img src="photos/room1-2.jpg" alt="room1-2" loading="lazy">
+        </button>
+        <button class="gallery-item" data-caption="Common Kitchen">
+          <img src="photos/common-kitchen.jpg" alt="Common Kitchen" loading="lazy">
+        </button>
+        <button class="gallery-item span-2" data-caption="Balcony">
+          <img src="https://placehold.co/900x600/1F2E26/F3EFE2?font=raleway&text=Balcony" alt="Balcony" loading="lazy">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LOKASYON
+       ✏️ PALITAN: buong address at ang mga landmark
+  ========================================================= -->
+  <section class="section section-alt" id="lokasyon">
+    <div class="container location-grid">
+      <div>
+        <p class="eyebrow">WHERE TO FIND US</p>
+        <h2 class="section-title">Location</h2>
+        <p class="location-address">Phase 1, Block 4 Lot 6 Southwind Estate Subdivision, Barangay Morales, Koronadal City, South Cotabato (9506), Philippines</p>
+        <ul class="landmark-list">
+          <li><span>3 min</span> to Regency Polytechnic College</li>
+          <li><span>5 min</span> to Korbel Foundation College Inc.</li>
+          <li><span>10 min</span> to Kings College of Marbel</li>
+          <li><span>15 min</span> to KCC Mall, Ace Center Point, and Super Market</li>
+        </ul>
+        <a class="btn btn-outline"
+           href="https://maps.app.goo.gl/7iTd4iQ2cmWUsjAu7"
+           target="_blank" rel="noopener">View on Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PRESYO / PRICING
+       ✏️ PALITAN: presyo, inclusions, at alisin ang card na
+       hindi mo kailangan (monthly o short-term)
+  ========================================================= -->
+  <section class="section" id="presyo">
+    <div class="container">
+      <p class="eyebrow">SIMPLE AND TRANSPARENT PRICING</p>
+      <h2 class="section-title">Choose Your Rental Option</h2>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <div class="keytag-wrap">
+            <svg class="keytag-string" viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 11v14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            </svg>
+            <div class="keytag keytag-static">
+              <span class="keytag-label">MONTHLY RENT</span>
+              <span class="keytag-price">₱1,500<span class="keytag-unit">/month</span></span>
+            </div>
+          </div>
+          <ul class="inclusions">
+            <li>1-month deposit + 1-month advance</li>
+            <li>WiFi Vendo (Optional)</li>
+            <li>Small Parking Area (Garage)</li>
+            <li>Regular unit maintenance</li>
+          </ul>
+          <a href="#kontak" class="btn btn-primary btn-block">Inquire About This</a>
+        </div>
+
+        <div class="price-card">
+          <div class="keytag-wrap">
+            <svg class="keytag-string" viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 11v14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            </svg>
+            <div class="keytag keytag-static">
+              <span class="keytag-label">SHORT-TERM STAY</span>
+              <span class="keytag-price">₱1,500<span class="keytag-unit">/night</span></span>
+            </div>
+          </div>
+          <ul class="inclusions">
+            <li>Good for a 1–3 night minimum stay</li>
+            <li>Linens and toiletries included</li>
+            <li>Self check-in gamit ang keypad</li>
+            <li>Free cancellation 24 hours before check-in</li>
+          </ul>
+          <a href="#kontak" class="btn btn-primary btn-block">Book Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       KONTAK
+       ✏️ PALITAN: numero, email, at link ng Messenger/Facebook.
+       Para gumana ang form, sundan ang tagubilin sa README.md
+       tungkol sa Formspree.
+  ========================================================= -->
+  <section class="section section-alt" id="kontak">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">LET'S TALK</p>
+        <h2 class="section-title">Inquire Now</h2>
+        <p>We usually respond within a few hours. Choose the contact method
+          that works best for you:</p>
+
+        <div class="contact-methods">
+          <a class="contact-method" href="tel:+639559674945">
+            <strong>Call</strong><span>0955-967-4945</span>
+          </a>
+          <a class="contact-method" href="https://wa.me/639559674945" target="_blank" rel="noopener">
+            <strong>WhatsApp</strong><span>Message us on WhatsApp</span>
+          </a>
+          <a class="contact-method" href="https://m.me/PALITANNGUSERNAME" target="_blank" rel="noopener">
+            <strong>Messenger</strong><span>Chat with us on Facebook</span>
+          </a>
+          <a class="contact-method" href="mailto:ziegreda@gmail.com">
+            <strong>Email</strong><span>ziegreda@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/PALITAN_NG_FORM_ID" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="contact">Email or Phone Number</label>
+        <input type="text" id="contact" name="contact" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Example: I am interested in the unit. When can I schedule a viewing?" required></textarea>
+
+        <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>AVA ANCHOR HOUSE Apartments — Koronadal, South Cotabato</p>
+    <p>&copy; <span id="year"></span> AVA ANCHOR HOUSE Apartments. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- =========================================================
+     LIGHTBOX MODAL (para sa gallery)
+========================================================= -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Isara">&times;</button>
+  <figure>
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

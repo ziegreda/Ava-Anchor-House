@@ -1,0 +1,480 @@
+/* =============================================================
+   BAHAY AMIHAN APARTMENTS — STYLESHEET
+   Paalala: hinati ito sa mga bahagi (SECTIONS) para madali mong
+   mahanap ang gusto mong baguhin. Search mo na lang ang salitang
+   nasa loob ng === === para tumalon agad doon.
+============================================================= */
+
+/* ---------- 1. TOKENS (COLOR, FONT) ---------- */
+:root{
+  --ink:        #16211B;   /* pangunahing madilim na background */
+  --ink-2:      #1F2E26;   /* pangalawang surface, medyo mas maliwanag */
+  --paper:      #F3EFE2;   /* mainit na puti, para sa text sa madilim na bg */
+  --paper-dim:  rgba(243,239,226,.68);
+  --accent:     #D9A441;   /* ginto/marigold — pangunahing accent */
+  --accent-2:   #B1502F;   /* mapusyaw na kulay-lupa, panandaliang gamit */
+  --line:       rgba(243,239,226,.14);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', -apple-system, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
+
+  --container: 1120px;
+  --radius: 10px;
+  --nav-h: 76px;
+}
+
+/* ---------- 2. RESET / BASE ---------- */
+*,*::before,*::after{ box-sizing: border-box; }
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+}
+body{
+  margin:0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color: inherit; text-decoration:none; }
+ul,dl{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,p{ margin:0; }
+
+:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+}
+
+.container{
+  max-width: var(--container);
+  margin-inline:auto;
+  padding-inline: 24px;
+}
+
+.skip-link{
+  position:absolute; left:-999px; top:auto;
+  background:var(--accent); color:var(--ink);
+  padding:10px 16px; border-radius:0 0 8px 0; z-index:200;
+  font-weight:600;
+}
+.skip-link:focus{ left:0; top:0; }
+
+.eyebrow{
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  color: var(--accent);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.section-title{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  line-height:1.12;
+  margin-bottom: 22px;
+  max-width: 20ch;
+}
+
+.section{ padding: 88px 0; }
+.section-alt{ background: var(--ink-2); }
+.section p:not(.eyebrow):not(.form-status){
+  color:var(--paper-dim);
+  font-size:.98rem;
+  line-height:1.7;
+}
+
+/* ---------- 3. BUTTONS ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight:600;
+  font-size:.95rem;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn-primary{ background: var(--accent); color: var(--ink); }
+.btn-primary:hover{ background:#e6b559; }
+.btn-outline{ border-color: var(--paper-dim); color: var(--paper); }
+.btn-outline:hover{ border-color: var(--paper); }
+.btn-small{ padding:10px 18px; font-size:.85rem; }
+.btn-block{ width:100%; margin-top: 22px; }
+
+/* ---------- 4. HEADER / NAV ---------- */
+.site-header{
+  position: fixed; inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display:flex; align-items:center;
+  background: rgba(22,33,27,.55);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 20px;
+}
+.logo{
+  display:flex; align-items:center; gap:8px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+}
+.logo-key{ color: var(--accent); width:22px; }
+.logo-key svg{ width:100%; height:auto; }
+
+.main-nav{ display:flex; gap: 28px; }
+.main-nav a{
+  font-size:.92rem; font-weight:500;
+  opacity:.85;
+}
+.main-nav a:hover{ opacity:1; color:var(--accent); }
+
+.nav-cta{ flex-shrink:0; }
+
+.menu-toggle{
+  display:none;
+  flex-direction:column; justify-content:center; gap:5px;
+  width: 40px; height:40px;
+  background:none; border:none; cursor:pointer;
+}
+.menu-toggle span{
+  height:2px; background:var(--paper); border-radius:2px;
+}
+
+/* ---------- 5. HERO ---------- */
+.hero{
+  position:relative;
+  min-height: 100vh;
+  display:flex; align-items:flex-end;
+  padding-bottom: 90px;
+  overflow:hidden;
+}
+.hero-photo{
+  position:absolute; inset:0; z-index:-2;
+}
+.hero-photo img{
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  transform:scale(1.2); transform-origin:left center;
+  filter: brightness(.58) saturate(.68) contrast(1.12);
+}
+.hero-scrim{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, rgba(10,16,13,.92) 0%, rgba(10,16,13,.68) 42%, rgba(10,16,13,.3) 100%),
+    linear-gradient(180deg, rgba(10,16,13,.2) 0%, rgba(10,16,13,.3) 54%, rgba(10,16,13,.94) 100%);
+  z-index:-1;
+}
+.hero-inner{ max-width: 640px; }
+.hero-title{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height:1.05;
+  margin: 6px 0 20px;
+}
+.hero-title em{ color: var(--accent); font-style:italic; }
+.hero-tagline{ color: var(--paper-dim); font-size:1.05rem; max-width:44ch; }
+.hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-top:32px; }
+
+/* ---------- 6. KEYTAG (signature element) ---------- */
+.keytag-wrap{
+  display:flex; flex-direction:column; align-items:center;
+}
+.keytag-string{
+  width: 34px; color: var(--paper-dim);
+}
+.keytag{
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 16px 22px;
+  display:flex; flex-direction:column; align-items:center;
+  transform: rotate(-4deg);
+  box-shadow: 0 18px 30px -14px rgba(0,0,0,.55);
+  min-width: 150px;
+}
+.keytag-label{
+  font-family: var(--font-mono);
+  font-size:.62rem;
+  letter-spacing:.1em;
+  color: var(--accent-2);
+  margin-bottom:4px;
+}
+.keytag-price{
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:1.5rem;
+}
+.keytag-unit{
+  font-family: var(--font-body);
+  font-weight:500;
+  font-size:.7rem;
+  color:#5b5142;
+}
+.hero-keytag{
+  position:absolute;
+  right: 6%;
+  top: 130px;
+}
+@media (max-width: 860px){
+  .hero-keytag{ display:none; } /* hindi kasya nang maganda sa maliit na screen — nasa presyo section pa rin ito */
+}
+
+/* ---------- 7. ABOUT / QUICK FACTS ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns: 1.3fr .9fr;
+  gap: 60px;
+  align-items:start;
+}
+.about-copy > p{ margin-top:14px; max-width:58ch; }
+.about-copy h3{
+  font-family:var(--font-display);
+  font-size:1.2rem;
+  font-weight:500;
+  line-height:1.25;
+  color:var(--paper);
+  margin:30px 0 14px;
+}
+.about-group{ max-width:64ch; }
+.details-list{
+  display:grid;
+  gap:10px;
+  margin:0;
+}
+.details-list li{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(145px, .42fr) 1fr;
+  gap:16px;
+  padding:11px 0 11px 18px;
+  border-bottom:1px solid var(--line);
+  color:var(--paper-dim);
+  font-size:.92rem;
+  line-height:1.55;
+}
+.details-list li::before{
+  content:'';
+  position:absolute;
+  top:19px;
+  left:0;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.details-list strong{ color:var(--paper); font-weight:600; }
+.about-cta{ margin-top:26px !important; }
+
+.quick-facts{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+}
+.fact{
+  background: var(--ink);
+  padding: 20px;
+}
+.fact dt{
+  font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+  color: var(--paper-dim); margin-bottom:8px;
+}
+.fact dd{
+  font-family: var(--font-mono);
+  font-size:1.2rem; margin:0;
+  color: var(--accent);
+}
+
+/* ---------- 8. AMENITIES ---------- */
+.amenities-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.amenity{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:14px;
+  font-size:.92rem;
+}
+.amenity svg{ width:26px; height:26px; color: var(--accent); }
+
+/* ---------- 9. GALLERY + LIGHTBOX ---------- */
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 160px;
+  gap: 10px;
+}
+.gallery-item{
+  padding:0; border:none; border-radius: 8px; overflow:hidden;
+  cursor: zoom-in; background:none; position:relative;
+}
+.gallery-item.span-2{ grid-column: span 2; grid-row: span 2; }
+.gallery-item img{
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .35s ease;
+}
+.gallery-item:hover img{ transform: scale(1.05); }
+
+.lightbox{
+  position:fixed; inset:0; z-index:300;
+  background: rgba(10,14,11,.92);
+  display:flex; align-items:center; justify-content:center;
+  padding: 40px;
+}
+.lightbox[hidden]{ display:none; }
+.lightbox figure{ margin:0; max-width: 900px; width:100%; }
+.lightbox img{ width:100%; border-radius:6px; }
+.lightbox figcaption{
+  text-align:center; margin-top:12px; color:var(--paper-dim);
+  font-family: var(--font-mono); font-size:.85rem;
+}
+.lightbox-close{
+  position:absolute; top:24px; right:28px;
+  background:none; border:none; color:var(--paper);
+  font-size:2.2rem; line-height:1; cursor:pointer;
+}
+
+/* ---------- 10. LOKASYON ---------- */
+.location-grid{ max-width: 640px; }
+.location-address{ margin: 8px 0 20px; max-width:58ch; }
+.landmark-list{ margin-bottom: 26px; }
+.landmark-list li{
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+  color: var(--paper-dim);
+}
+.landmark-list li span{
+  font-family: var(--font-mono); color: var(--accent);
+  margin-right:10px;
+}
+
+/* ---------- 11. PRICING ---------- */
+.pricing-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.price-card{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px 26px 26px;
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center;
+}
+.keytag-static{ transform: rotate(0deg); }
+.inclusions{ margin: 26px 0 4px; width:100%; text-align:left; }
+.inclusions li{
+  padding: 8px 0 8px 22px;
+  position:relative;
+  color: var(--paper-dim);
+  font-size:.92rem;
+}
+.inclusions li::before{
+  content:'—'; position:absolute; left:0; color: var(--accent);
+}
+
+/* ---------- 12. KONTAK / CONTACT ---------- */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items:start;
+}
+.contact-info p{ margin: 14px 0 26px; max-width:46ch; }
+.contact-methods{ display:grid; gap:12px; }
+.contact-method{
+  display:flex; justify-content:space-between; align-items:center;
+  border:1px solid var(--line); border-radius:8px;
+  padding: 16px 18px;
+}
+.contact-method:hover{ border-color: var(--accent); }
+.contact-method strong{ font-weight:600; }
+.contact-method span{ color: var(--paper-dim); font-size:.88rem; }
+
+.contact-form{ display:flex; flex-direction:column; gap:8px; }
+.contact-form label{
+  font-size:.8rem; letter-spacing:.05em; text-transform:uppercase;
+  color: var(--paper-dim); margin-top:14px;
+}
+.contact-form input,
+.contact-form textarea{
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: .95rem;
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{ border-color: var(--accent); }
+.form-status{ min-height: 1.2em; font-size:.88rem; color: var(--accent); margin-top:10px; }
+
+/* ---------- 13. FOOTER ---------- */
+.site-footer{
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+}
+.footer-inner{
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  font-size:.85rem; color: var(--paper-dim);
+}
+
+/* ---------- 14. HEADER STATE (added via JS on scroll) ---------- */
+.site-header.is-scrolled{
+  background: rgba(22,33,27,.85);
+}
+
+/* ---------- 15. RESPONSIVE ---------- */
+@media (max-width: 900px){
+  .about-grid, .contact-grid{ grid-template-columns: 1fr; gap: 36px; }
+  .pricing-grid{ grid-template-columns: 1fr; max-width: 420px; margin-inline:auto; }
+  .amenities-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px){
+  .details-list li{ grid-template-columns:1fr; gap:2px; }
+}
+
+@media (max-width: 760px){
+  .hero-photo img{ transform:scale(1.08); }
+  .main-nav, .nav-cta{ display:none; }
+  .menu-toggle{ display:flex; }
+
+  .main-nav.is-open{
+    display:flex; flex-direction:column;
+    position:absolute; top: var(--nav-h); left:0; right:0;
+    background: var(--ink-2);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    gap: 18px;
+  }
+
+  .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; }
+  .gallery-item.span-2{ grid-column: span 2; grid-row: span 1; }
+  .section{ padding: 64px 0; }
+}
