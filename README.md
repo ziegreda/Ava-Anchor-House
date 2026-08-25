@@ -1,9 +1,8 @@
-# AVA ANCHOR HOUSE Apartments — Website
+# CASA JAVA Apartments — Website
 
 A lightweight static website (HTML + CSS + JavaScript, with no build tools or
-framework required) for advertising AVA ANCHOR HOUSE shared-room rentals in
-Koronadal City, South Cotabato. The website content is currently written in
-English.
+framework required) for advertising CASA JAVA shared-room rentals in Koronadal
+City, South Cotabato. The website content is currently written in English.
 
 ## Project Files
 
@@ -33,23 +32,45 @@ The current page includes:
 | Rental prices and inclusions | `#presyo` |
 | Phone, WhatsApp, Messenger, and email | `#kontak` and `.contact-methods` |
 
+The contact details currently shown are `0955-967-4945` for calls and
+WhatsApp, `ziegreda@gmail.com` for email, and a placeholder Messenger URL.
+Replace the Messenger URL before publishing.
+
+## Design and Responsive Behavior
+
+The design uses Fraunces for display headings, Inter for body text, and IBM
+Plex Mono for prices and property facts. The visual system uses a dark green
+background, warm cream text, gold accents, subtle borders, and responsive
+two-column sections that stack on smaller screens.
+
+The hero uses `photos/BG-darkened.jpg` with a dark layered overlay for text
+readability. The gallery uses a lightbox, and the navigation collapses into a
+mobile menu below the mobile breakpoint.
+
 The current rental information is a shared room for up to 4 people, with an
 18 sqm ground-floor room, private bathroom, common kitchen, study area, CCTV,
-Vendo WiFi, and parking. The listed rate is PHP 1,500 per month or PHP 1,500
-per night for short-term stays.
+Vendo WiFi, and parking. The monthly rate is PHP 1,500. A PHP 1,500 nightly
+short-term rate is displayed but its inclusions are currently struck through,
+so confirm availability and terms before publishing it as an active offer.
 
-### Local Images
+### Local Image Assets
 
-The current HTML references these local files:
+The `photos/` folder currently contains these local assets:
 
 - `photos/BG-darkened.jpg` - hero background
 - `photos/CommonArea.png` - common area gallery image
-- `photos/Kusina.png` - kitchen gallery image
+- `photos/kitchen-sink.png` - kitchen sink gallery image
+- `photos/room1-2.jpg` - room gallery image
+- `photos/common-kitchen.jpg` - common kitchen gallery image
+- `photos/Common area 2.jpg` - additional common-area photo
+- `photos/Garage 1.jpg` and `photos/Garage.jpg` - garage photos
 
-The bedroom, bathroom, and balcony gallery items still use placeholder image
-URLs. Replace those `src` values in `index.html` when the final photos are
-available. Keep image filenames and letter casing consistent, especially when
-deploying to a case-sensitive host.
+The current HTML uses the first four gallery assets listed above. The extra
+common-area and garage photos are available for future gallery updates. The
+balcony gallery item still uses a placeholder image URL; replace its `src`
+value in `index.html` when a final balcony photo is available. Keep image
+filenames and letter casing consistent, especially when deploying to a
+case-sensitive host.
 
 ## Contact Form Setup
 
@@ -70,7 +91,7 @@ remain available independently.
 
 Open `index.html` in a browser and verify the following:
 
-1. The hero image at local gallery images load correctly.
+1. The hero image and local gallery images load correctly.
 2. The layout remains readable at desktop and mobile widths.
 3. Gallery images open in the lightbox and close with the close button or
    Escape key.
